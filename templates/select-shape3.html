@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f766e">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='calculator.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='select-shape.css')}}">
+    <title>انتخاب شکل سه بعدی</title>
+</head>
+<body class="shape-selection-page">
+    <header class="page-header">
+        <a href="/" class="home-link">خانه</a>
+        <div class="header-title">
+            <span class="eyebrow">۳D GEOMETRY</span>
+            <h1>انتخاب شکل</h1>
+        </div>
+    </header>
+
+    <main class="shape-main">
+        <section class="selection-intro">
+            <span class="section-label">مرحله دوم</span>
+            <h2>شکل سه بعدی را انتخاب کنید</h2>
+            <p>روی شکل موردنظر کلیک کنید و سپس دکمه انتخاب را بزنید.</p>
+        </section>
+
+        <form action="/geometry3" class="shape-form">
+            <label class="radio-box">
+                <input type="radio" name="op" value="1" required>
+                <span class="custom square"><i>⬡</i><b>مکعب</b></span>
+            </label>
+            <label class="radio-box">
+                <input type="radio" name="op" value="2" required>
+                <span class="custom triangle"><i>⌂</i><b>مخروط</b></span>
+            </label>
+            <label class="radio-box">
+                <input type="radio" name="op" value="3" required>
+                <span class="custom rectangle"><i>▣</i><b>مکعب مستطیل</b></span>
+            </label>
+            <label class="radio-box">
+                <input type="radio" name="op" value="4" required>
+                <span class="custom circle"><i>◉</i><b>کره</b></span>
+            </label>
+            <button type="submit" id="next">انتخاب شکل <span>←</span></button>
+        </form>
+    </main>
+</body>
+</html>

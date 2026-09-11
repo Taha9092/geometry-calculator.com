@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f766e">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='calculator.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='geometry.css')}}">
+    <title>محاسبات محیط و مساحت</title>
+</head>
+<body class="geometry-page">
+    <header class="page-header">
+        <a href="/" id="home" class="home-link">خانه</a>
+        <a href="/select-shape2" id="back" class="back-link">بازگشت</a>
+        <div class="header-title">
+            <span class="eyebrow">۲D GEOMETRY</span>
+            <h1>محیط و مساحت</h1>
+        </div>
+    </header>
+
+    <main class="geometry-main">
+        <section class="instruction-card">
+            <span class="section-label">ورودی‌ها</span>
+            <h2>مقادیر خواسته‌شده را وارد کنید</h2>
+            <p>فقط کادرهای مربوط به شکل انتخاب‌شده فعال هستند.</p>
+        </section>
+
+        <section class="result-box">
+            <div class="result-heading">
+                <span class="result-icon">✓</span>
+                <div>
+                    <span class="section-label">نتیجه محاسبه</span>
+                    <h2>خروجی</h2>
+                </div>
+            </div>
+            <div class="result-grid">
+                <div class="result-item">
+                    <span>محیط</span>
+                    <strong class="value">{{env}}</strong>
+                </div>
+                <div class="result-item">
+                    <span>مساحت</span>
+                    <strong class="value">{{area}}</strong>
+                </div>
+            </div>
+
+            <form method="post">
+                <div class="input-grid">
+                    <label>طول<input type="text" name="tool" placeholder="طول" {% if "tool" in disabled %}disabled{% endif %}></label>
+                    <label>عرض<input type="text" name="arz" placeholder="عرض" {% if "arz" in disabled %}disabled{% endif %}></label>
+                    <label>ارتفاع<input type="text" name="ertefa" placeholder="ارتفاع" {% if "ertefa" in disabled %}disabled{% endif %}></label>
+                    <label>شعاع<input type="text" name="shoaa" placeholder="شعاع" {% if "shoaa" in disabled %}disabled{% endif %}></label>
+                    <label>قاعده<input type="text" name="ghaede" placeholder="قاعده" {% if "ghaede" in disabled %}disabled{% endif %}></label>
+                </div>
+                <input type="submit" value="محاسبه">
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f766e">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='calculator.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='bmi.css')}}">
+    <title>محاسبه BMI</title>
+</head>
+<body class="tool-page">
+    <header class="page-header">
+        <a href="/" id="home" class="home-link">خانه</a>
+        <div class="header-title">
+            <span class="eyebrow">BODY MASS INDEX</span>
+            <h1>محاسبه BMI</h1>
+        </div>
+    </header>
+
+    <main class="bmi-main">
+        <section class="bmi-card">
+            <div class="tool-icon">⚖</div>
+            <span class="section-label">شاخص توده بدنی</span>
+            <h2>قد و وزن را وارد کنید</h2>
+            <p class="helper">برای محاسبه BMI، قد و وزن خود را وارد کنید.</p>
+
+            <div class="bmi-result">
+                <span>BMI شما</span>
+                <strong>{{bmi}}</strong>
+            </div>
+
+            <form method="post">
+                <label for="height">قد <small>(سانتی‌متر)</small></label>
+                <input type="number" name="height" id="height" placeholder="مثلاً ۱۷۰" required min="1" inputmode="decimal">
+
+                <label for="weight">وزن <small>(کیلوگرم)</small></label>
+                <input type="number" name="weight" id="weight" placeholder="مثلاً ۶۰" required min="1" inputmode="decimal">
+
+                <input type="submit" value="محاسبه BMI">
+            </form>
+        </section>
+
+        <aside class="bmi-guide">
+            <div class="guide-title">
+                <span>●</span>
+                <h2>راهنمای تقریبی BMI</h2>
+            </div>
+            <div class="guide-row"><span>کمتر از ۱۸٫۵</span><b>کمبود وزن</b></div>
+            <div class="guide-row"><span>۱۸٫۵ تا ۲۴٫۹</span><b>نرمال</b></div>
+            <div class="guide-row"><span>۲۵ تا ۲۹٫۹</span><b>اضافه‌وزن</b></div>
+            <div class="guide-row"><span>۳۰ و بالاتر</span><b>چاقی</b></div>
+        </aside>
+    </main>
+</body>
+</html>

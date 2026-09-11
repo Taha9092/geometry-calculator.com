@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f766e">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='calculator.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='average.css')}}">
+    <title>میانگین‌گیری</title>
+</head>
+<body class="tool-page">
+    <header class="page-header">
+        <a href="/" id="home" class="home-link">خانه</a>
+        <div class="header-title">
+            <span class="eyebrow">CALCULATOR TOOL</span>
+            <h1>میانگین‌گیری</h1>
+        </div>
+    </header>
+
+    <main class="tool-main">
+        <section class="tool-card">
+            <div class="tool-icon">x̄</div>
+            <span class="section-label">میانگین چند عدد</span>
+            <h2>عددها را وارد کنید</h2>
+            <p class="helper">عددها را با فاصله از هم وارد کنید؛ مثل: ۲۳ ۶ ۴٫۵</p>
+
+            <div class="result-card">
+                <span>نتیجه میانگین</span>
+                <strong>{{out}}</strong>
+            </div>
+
+            <form method="post">
+                <label for="number_A">عددها</label>
+                <input type="text" name="number_A" id="number_A" placeholder="مثلاً ۲۳ ۶ ۴٫۵" autocomplete="off">
+                <input type="submit" value="محاسبه">
+            </form>
+        </section>
+    </main>
+</body>
+</html>

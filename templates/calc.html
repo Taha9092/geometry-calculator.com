@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f766e">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='calculator.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='calc.css')}}">
+    <title>ماشین حساب</title>
+</head>
+<body class="calculator-page">
+    <header class="calc-header">
+        <a href="/" class="home-link">خانه</a>
+        <div>
+            <span class="eyebrow">QUICK CALCULATOR</span>
+            <h1>ماشین حساب</h1>
+        </div>
+    </header>
+
+    <main class="calculator-main">
+        <form method="post" class="calculator">
+            <input type="text" name="display" id="display_input" value="{{ display }}" readonly aria-label="نمایشگر ماشین حساب">
+            <input type="hidden" name="current" value="{{display}}">
+
+            <div id="numbers">
+                <button name="back" value="1" type="submit" class="back">⌫</button>
+                <button name="clear" value="1" type="submit" class="clear">C</button>
+                <button name="zarb" value="×" type="submit" id="zarb">×</button>
+                <button name="taghsim" value="÷" type="submit" id="taghsim">÷</button>
+
+                <button name="digit" type="submit" value="7" id="7">۷</button>
+                <button name="digit" type="submit" value="8" id="8">۸</button>
+                <button name="digit" type="submit" value="9" id="9">۹</button>
+                <button name="jam" value="+" type="submit" id="jam">+</button>
+
+                <button name="digit" type="submit" value="4" id="4">۴</button>
+                <button name="digit" type="submit" value="5" id="5">۵</button>
+                <button name="digit" type="submit" value="6" id="6">۶</button>
+                <button name="tafrigh" value="-" type="submit" id="tafrigh">−</button>
+
+                <button name="digit" type="submit" value="1" id="1">۱</button>
+                <button name="digit" type="submit" value="2" id="2">۲</button>
+                <button name="digit" type="submit" value="3" id="3">۳</button>
+                <button name="tavan" value="^" type="submit" id="tavan">^</button>
+
+                <button name="manfi" value="-/+" type="submit" id="manfi">±</button>
+                <button name="digit" type="submit" value="0" id="0">۰</button>
+                <button name="dot" value="." type="submit" id="dot">٫</button>
+                <button name="equals" value="=" type="submit" class="equals">=</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

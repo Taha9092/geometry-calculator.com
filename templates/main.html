@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0f766e">
+    <title>ماشین حساب هندسی</title>
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='calculator.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+</head>
+<body class="home-page">
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand">
+                <span class="brand-icon">∑</span>
+                <div>
+                    <span class="eyebrow">محاسبات سریع و دقیق</span>
+                    <h1>ماشین حساب هندسی</h1>
+                </div>
+            </div>
+            <a href="/about" id="about" class="header-link">درباره ما</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-copy">
+                <span class="section-label">ابزارهای کاربردی</span>
+                <h2>محاسباتت را <span>ساده‌تر</span> انجام بده.</h2>
+                <p>مجموعه‌ای از ابزارهای ساده و سریع برای ماشین‌حساب، محاسبات هندسی، میانگین‌گیری و محاسبه BMI.</p>
+            </div>
+            <div class="hero-symbol" aria-hidden="true">
+                <span>π</span><span>+</span><span>√</span><span>×</span>
+            </div>
+        </section>
+
+        <nav class="service-nav" aria-label="ابزارهای محاسباتی">
+            <a href="/calculator" title="برای استفاده از سرویس ماشین حساب کلیک کنید">
+                <span class="service-icon">⌨</span>
+                <span><b>ماشین حساب</b><small>محاسبات عددی</small></span>
+                <span class="arrow">←</span>
+            </a>
+            <a href="/select-dimension" title="برای استفاده از سرویس هندسه کلیک کنید">
+                <span class="service-icon">△</span>
+                <span><b>هندسه</b><small>محیط، مساحت و حجم</small></span>
+                <span class="arrow">←</span>
+            </a>
+            <a href="/average" title="برای استفاده از سرویس میانگین گیری کلیک کنید">
+                <span class="service-icon">x̄</span>
+                <span><b>میانگین‌گیری</b><small>میانگین چند عدد</small></span>
+                <span class="arrow">←</span>
+            </a>
+            <a href="/bmi" title="برای استفاده از سرویس محاسبه BMI کلیک کنید">
+                <span class="service-icon">⚖</span>
+                <span><b>محاسبه BMI</b><small>شاخص توده بدنی</small></span>
+                <span class="arrow">←</span>
+            </a>
+        </nav>
+
+        <section class="info-card">
+            <div class="info-number">۰۱</div>
+            <div>
+                <span class="section-label">درباره پروژه</span>
+                <h2>یک ابزار کوچک، برای محاسبات روزمره</h2>
+                <p>این سایت برای انجام سریع‌تر محاسبات عددی و هندسی طراحی شده است. در بخش هندسه می‌توانید محیط، مساحت و حجم شکل‌های مختلف را به دست بیاورید و با ابزارهای دیگر نیز محاسبات موردنیازتان را انجام دهید.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>ماشین حساب هندسی</strong>
+            <span>پروژه خوارزمی</span>
+        </div>
+        <div class="credits">
+            <span>Back-end: سید طاها حسینی</span>
+            <span>Front-end: طاها رجبی راغب</span>
+            <span>پایه هفتم · دبیرستان آیت‌الله کاشانی</span>
+        </div>
+    </footer>
+</body>
+</html>

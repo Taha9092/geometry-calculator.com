@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f766e">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='calculator.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='select-dimension.css')}}">
+    <title>انتخاب نوع شکل</title>
+</head>
+<body class="selection-page">
+    <header class="page-header">
+        <a href="/" id="home" class="home-link">خانه</a>
+        <div class="header-title">
+            <span class="eyebrow">GEOMETRY</span>
+            <h1>انتخاب نوع شکل</h1>
+        </div>
+    </header>
+
+    <main class="selection-main">
+        <section class="selection-intro">
+            <span class="section-label">مرحله اول</span>
+            <h2>چه نوع شکلی را می‌خواهید محاسبه کنید؟</h2>
+            <p>دو بعدی برای محیط و مساحت، سه بعدی برای حجم.</p>
+        </section>
+
+        <div class="dimension-cards">
+            <a href="/select-shape2" id="2D" class="dimension-card">
+                <span class="dimension-shape shape-2d">□</span>
+                <span><strong>اشکال دو بعدی</strong><small>محیط و مساحت</small></span>
+                <b>←</b>
+            </a>
+            <a href="/select-shape3" id="3D" class="dimension-card">
+                <span class="dimension-shape shape-3d">◇</span>
+                <span><strong>اشکال سه بعدی</strong><small>محاسبه حجم</small></span>
+                <b>←</b>
+            </a>
+        </div>
+    </main>
+</body>
+</html>

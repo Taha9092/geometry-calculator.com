@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f766e">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='calculator.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='geometry.css')}}">
+    <title>محاسبه حجم</title>
+</head>
+<body class="geometry-page">
+    <header class="page-header">
+        <a href="/" id="home" class="home-link">خانه</a>
+        <a href="/select-shape3" id="back" class="back-link">بازگشت</a>
+        <div class="header-title">
+            <span class="eyebrow">۳D GEOMETRY</span>
+            <h1>محاسبه حجم</h1>
+        </div>
+    </header>
+
+    <main class="geometry-main">
+        <section class="instruction-card">
+            <span class="section-label">ورودی‌ها</span>
+            <h2>مقادیر خواسته‌شده را وارد کنید</h2>
+            <p>فقط کادرهای مربوط به شکل انتخاب‌شده فعال هستند.</p>
+        </section>
+
+        <section class="result-box">
+            <div class="result-heading">
+                <span class="result-icon">✓</span>
+                <div>
+                    <span class="section-label">نتیجه محاسبه</span>
+                    <h2>خروجی</h2>
+                </div>
+            </div>
+            <div class="result-grid volume-grid">
+                <div class="result-item">
+                    <span>حجم</span>
+                    <strong class="value">{{volume}}</strong>
+                </div>
+                <div class="result-item formula-item">
+                    <span>فرمول</span>
+                    <strong class="value">{{formula}}</strong>
+                </div>
+            </div>
+
+            <form method="post">
+                <div class="input-grid">
+                    <label>طول قاعده<input type="text" name="tool" placeholder="طول قاعده" {% if "tool" in disabled %}disabled{% endif %}></label>
+                    <label>عرض قاعده<input type="text" name="arz" placeholder="عرض قاعده" {% if "arz" in disabled %}disabled{% endif %}></label>
+                    <label>ارتفاع<input type="text" name="ertefa" placeholder="ارتفاع" {% if "ertefa" in disabled %}disabled{% endif %}></label>
+                    <label>شعاع قاعده<input type="text" name="shoaa" placeholder="شعاع قاعده" {% if "shoaa" in disabled %}disabled{% endif %}></label>
+                </div>
+                <input type="submit" value="محاسبه">
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,194 @@
+@font-face{
+    font-family:"Vazir";
+    src:url("fonts/Vazir.ttf") format("truetype");
+    font-display:swap;
+}
+:root{
+    --primary:#0f766e;
+    --primary-dark:#115e59;
+    --primary-soft:#ccfbf1;
+    --accent:#14b8a6;
+    --ink:#163333;
+    --muted:#64748b;
+    --line:#dcebea;
+    --surface:#ffffff;
+    --bg:#f3f8f7;
+    --shadow:0 18px 50px rgba(15,118,110,.12);
+    --shadow-sm:0 8px 24px rgba(15,54,54,.08);
+    --radius:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    margin:0;
+    min-height:100vh;
+    font-family:"Vazir",Tahoma,sans-serif;
+    direction:rtl;
+    color:var(--ink);
+    background:
+        radial-gradient(circle at 10% 10%, rgba(20,184,166,.10), transparent 30%),
+        radial-gradient(circle at 90% 85%, rgba(15,118,110,.08), transparent 30%),
+        var(--bg);
+}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+button,input[type="submit"],a{ -webkit-tap-highlight-color:transparent }
+::selection{background:var(--primary);color:#fff}
+.page-header{
+    position:relative;
+    width:100%;
+    min-height:118px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:24px 90px;
+    color:#fff;
+    background:linear-gradient(135deg,var(--primary-dark),var(--primary),#159a8d);
+    box-shadow:0 10px 35px rgba(15,118,110,.18);
+    overflow:hidden;
+}
+.page-header::after{
+    content:"";
+    position:absolute;
+    width:240px;height:240px;
+    left:-90px;top:-150px;
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:50%;
+    box-shadow:0 0 0 35px rgba(255,255,255,.035),0 0 0 70px rgba(255,255,255,.025);
+}
+.header-title{text-align:center;position:relative;z-index:1}
+.header-title h1{margin:4px 0 0;font-size:clamp(24px,4vw,34px);letter-spacing:-.5px}
+.eyebrow,.section-label{
+    display:block;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1px;
+    opacity:.82;
+}
+.section-label{color:var(--primary);letter-spacing:0}
+.home-link,.back-link,.header-link{
+    position:absolute;
+    z-index:2;
+    top:50%;
+    transform:translateY(-50%);
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:78px;
+    padding:10px 15px;
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:12px;
+    background:rgba(255,255,255,.12);
+    color:#fff;
+    font-size:13px;
+    font-weight:700;
+    backdrop-filter:blur(8px);
+    transition:.2s ease;
+}
+.home-link{left:24px}
+.back-link{right:24px}
+.home-link:hover,.back-link:hover,.header-link:hover{
+    background:#fff;color:var(--primary);
+    transform:translateY(-50%) translateY(-2px);
+}
+form label{font-size:13px;font-weight:700}
+input[type="text"],input[type="number"]{
+    width:100%;
+    border:1.5px solid var(--line);
+    border-radius:14px;
+    padding:13px 15px;
+    outline:0;
+    color:var(--ink);
+    background:#fbfdfd;
+    text-align:center;
+    transition:.2s ease;
+}
+input[type="text"]:focus,input[type="number"]:focus{
+    border-color:var(--accent);
+    background:#fff;
+    box-shadow:0 0 0 4px rgba(20,184,166,.10);
+}
+input:disabled{
+    background:#eef2f2!important;
+    border-color:#d8e0df!important;
+    color:#9aa8a6!important;
+    cursor:not-allowed;
+    opacity:1;
+}
+input[type="submit"],button[type="submit"]{
+    border:0;
+    border-radius:14px;
+    padding:13px 20px;
+    background:linear-gradient(135deg,var(--primary),#159a8d);
+    color:#fff;
+    font-weight:800;
+    cursor:pointer;
+    box-shadow:0 8px 18px rgba(15,118,110,.18);
+    transition:.2s ease;
+}
+input[type="submit"]:hover,button[type="submit"]:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 24px rgba(15,118,110,.22);
+}
+input[type="submit"]:active,button[type="submit"]:active{transform:translateY(0)}
+@media(max-width:600px){
+    .page-header{min-height:100px;padding:20px 80px}
+    .home-link,.back-link{min-width:68px;padding:9px 11px;font-size:12px}
+    .home-link{left:14px}.back-link{right:14px}
+}
+
+.calculator-page{background:
+    radial-gradient(circle at 15% 15%,rgba(20,184,166,.13),transparent 25%),
+    radial-gradient(circle at 85% 80%,rgba(15,118,110,.10),transparent 28%),#edf5f4;
+}
+.calc-header{
+    position:relative;display:flex;justify-content:center;align-items:center;
+    min-height:105px;padding:22px 80px;color:#fff;
+    background:linear-gradient(135deg,var(--primary-dark),var(--primary),#159a8d);
+    box-shadow:0 10px 30px rgba(15,118,110,.18);
+}
+.calc-header h1{margin:4px 0 0;font-size:28px}
+.calc-header .home-link{left:24px}
+.calculator-main{display:flex;justify-content:center;padding:42px 16px 70px}
+.calculator{
+    width:min(360px,100%);
+    padding:18px;
+    border-radius:28px;
+    background:rgba(255,255,255,.88);
+    border:1px solid rgba(220,235,234,.9);
+    box-shadow:0 22px 60px rgba(15,70,67,.13);
+}
+#display_input{
+    display:block;width:100%;height:78px;margin:0 0 14px;
+    padding:10px 16px;border:1px solid var(--line);border-radius:18px;
+    background:#f7fbfa;color:var(--ink);font-size:28px;font-weight:800;
+    text-align:left;direction:ltr;box-shadow:inset 0 2px 8px rgba(15,70,67,.04);
+    pointer-events:none;
+}
+#numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+#numbers button{
+    height:62px;padding:0;border:1px solid transparent;border-radius:15px;
+    background:#e8f3f1;color:var(--primary-dark);font-size:20px;font-weight:800;
+    cursor:pointer;box-shadow:none;transition:.16s ease;
+}
+#numbers button:hover{transform:translateY(-2px);background:#d9eeea}
+#numbers button:active{transform:scale(.97)}
+#numbers #zarb,#numbers #taghsim,#numbers #jam,#numbers #tafrigh,#numbers #tavan{
+    background:#d5ece8;color:var(--primary-dark);
+}
+#numbers .back{background:#eef3f2;color:#536866;font-size:22px}
+#numbers .clear{background:#fff0ee;color:#c4493d}
+#numbers .clear:hover{background:#ffe2df}
+#numbers .equals{
+    background:linear-gradient(135deg,var(--primary),#159a8d);
+    color:#fff;box-shadow:0 7px 15px rgba(15,118,110,.18);
+}
+#numbers .equals:hover{background:linear-gradient(135deg,#0d675f,#128b80)}
+#numbers #manfi,#numbers #dot{background:#edf4f3}
+@media(max-width:400px){
+    .calculator-main{padding-top:22px}
+    .calculator{padding:13px;border-radius:23px}
+    #numbers{gap:7px}
+    #numbers button{height:57px}
+    #display_input{height:70px;font-size:24px}
+}
